@@ -4,8 +4,25 @@ set -e
 # 1. Install dependencies & custom nodes
 sudo apt-get update && sudo apt-get install -y aria2 git
 
+# Helper function for cloning/updating repositories
+install_node() {
+  local repo_url="$1"
+  local target_dir="$2"
+  git clone "$repo_url" "$target_dir" 2>/dev/null || git -C "$target_dir" pull
+}
+
+# Install rgthree-comfy
 NODE_DIR="/workspace/ComfyUI/custom_nodes/rgthree-comfy"
-git clone https://github.com/rgthree/rgthree-comfy.git "$NODE_DIR" 2>/dev/null || git -C "$NODE_DIR" pull
+install_node "https://github.com/rgthree/rgthree-comfy.git" "$NODE_DIR"
+
+# Install ComfyUI-SeedVR2_VideoUpscaler & dependencies
+SEEDVR2_DIR="/workspace/ComfyUI/custom_nodes/ComfyUI-SeedVR2_VideoUpscaler"
+install_node "https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler.git" "$SEEDVR2_DIR"
+
+if [ -f "$SEEDVR2_DIR/requirements.txt" ]; then
+  echo "Installing SeedVR2 dependencies..."
+  pip install -r "$SEEDVR2_DIR/requirements.txt"
+fi
 
 # Helper function to handle aria2c and space-safe headers
 dl() {
