@@ -81,9 +81,9 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "SaveImage",
         "cnr_id": "comfy-core",
-        "ver": "0.25.0"
+        "ver": "0.25.0",
+        "Node name for S&R": "SaveImage"
       },
       "widgets_values": [
         "Krea2_turbo"
@@ -121,9 +121,9 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "ResolutionSelector",
         "cnr_id": "comfy-core",
-        "ver": "0.25.0"
+        "ver": "0.25.0",
+        "Node name for S&R": "ResolutionSelector"
       },
       "widgets_values": [
         "2:3 (Portrait Photo)",
@@ -558,9 +558,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "CLIPTextEncode",
               "cnr_id": "comfy-core",
-              "ver": "0.25.0"
+              "ver": "0.25.0",
+              "Node name for S&R": "CLIPTextEncode"
             },
             "widgets_values": [
               "A high-resolution, surreal digital illustration showing a human hand holding a martini glass. The image is overlaid with whimsical, expressive ink-style doodles, including a cartoon figure inside the glass, a drawn citrus wedge on the rim, and various abstract sketches and faces surrounding the glass against a clean, white background. The style seamlessly blends a realistic, lit photograph with loose, hand-drawn marker artistry, creating a playful and artistic juxtaposition."
@@ -614,9 +614,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "EmptyLatentImage",
               "cnr_id": "comfy-core",
-              "ver": "0.25.0"
+              "ver": "0.25.0",
+              "Node name for S&R": "EmptyLatentImage"
             },
             "widgets_values": [
               1024,
@@ -685,9 +685,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "KSampler",
               "cnr_id": "comfy-core",
-              "ver": "0.25.0"
+              "ver": "0.25.0",
+              "Node name for S&R": "KSampler"
             },
             "widgets_values": [
               834907758041331,
@@ -741,9 +741,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "VAEDecode",
               "cnr_id": "comfy-core",
-              "ver": "0.25.0"
+              "ver": "0.25.0",
+              "Node name for S&R": "VAEDecode"
             },
             "widgets_values": []
           },
@@ -784,9 +784,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "UNETLoader",
               "cnr_id": "comfy-core",
               "ver": "0.25.0",
+              "Node name for S&R": "UNETLoader",
               "models": [
                 {
                   "name": "krea2_turbo_fp8_scaled.safetensors",
@@ -837,9 +837,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "CLIPLoader",
               "cnr_id": "comfy-core",
               "ver": "0.25.0",
+              "Node name for S&R": "CLIPLoader",
               "models": [
                 {
                   "name": "qwen3vl_4b_fp8_scaled.safetensors",
@@ -849,7 +849,7 @@
               ]
             },
             "widgets_values": [
-              "ComfyUI/models/text_encoders/qwen3vl_4b_bf16.safetensors",
+              "qwen3vl_4b_bf16.safetensors",
               "krea2",
               "default"
             ]
@@ -890,9 +890,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "VAELoader",
               "cnr_id": "comfy-core",
               "ver": "0.25.0",
+              "Node name for S&R": "VAELoader",
               "models": [
                 {
                   "name": "qwen_image_vae.safetensors",
@@ -940,9 +940,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "ConditioningZeroOut",
               "cnr_id": "comfy-core",
-              "ver": "0.25.0"
+              "ver": "0.25.0",
+              "Node name for S&R": "ConditioningZeroOut"
             },
             "widgets_values": []
           },
@@ -1018,9 +1018,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "TextGenerate",
               "cnr_id": "comfy-core",
-              "ver": "0.25.0"
+              "ver": "0.25.0",
+              "Node name for S&R": "TextGenerate"
             },
             "widgets_values": [
               "",
@@ -1084,9 +1084,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "StringConcatenate",
               "cnr_id": "comfy-core",
-              "ver": "0.25.0"
+              "ver": "0.25.0",
+              "Node name for S&R": "StringConcatenate"
             },
             "widgets_values": [
               "",
@@ -1121,9 +1121,9 @@
             ],
             "title": "Text String (System Prompt)",
             "properties": {
-              "Node name for S&R": "PrimitiveStringMultiline",
               "cnr_id": "comfy-core",
-              "ver": "0.25.0"
+              "ver": "0.25.0",
+              "Node name for S&R": "PrimitiveStringMultiline"
             },
             "widgets_values": [
               "You are an expert prompt engineer for text-to-image models. Your task is to expand the user's prompt into a highly effective image-generation prompt.\n\nThink step by step about the request before writing the answer:\n- What is the subject and mood?\n- What visual styles, mediums, and lighting options would fit? Consider two or three alternatives and pick the one that best serves the caption.\n- What composition, framing, and grounded details will help the text-to-image model?\n\nThen output a single expanded prompt paragraph.\n\nFollow these rules strictly:\n1. **Faithfulness First:** Preserve all original subjects, actions, colors, and spatial relationships. Do not add new objects, props, characters, or animals unless the user clearly implies them.\n2. **Practical T2I Structure:** Write a prompt that a text-to-image model can parse cleanly. Group subjects with their own attributes and actions. Use grounded phrasing for poses, interactions, and spatial layout.\n3. **Style Planning Stays Internal:** Use your internal reasoning to choose style, medium, framing, and lighting. Do not emit planning tags or wrappers in the visible answer body.\n4. **Text Rendering:** If the user requests visible text, quotes, labels, or typography, specify the exact text clearly and wrap requested words in quotes.\n5. **Avoid Over-Specification:** Do not invent highly specific clothing, colors, materials, or scene details unless the input supports them.\n6. **Structure:** Write one cohesive paragraph after the thinking block. No bullets, JSON, or markdown.\n7. **Respect Existing Detail:** If the user's prompt is already detailed, lightly polish and finalize rather than heavily expanding — preserve their phrasing and direction.\n8. **Respect the Human Form:** Treat depictions of people with dignity. Assume clothing covers genitals and intimate anatomy.\n9. **Preserve User Medium:** When the user explicitly requests a medium (e.g. \"photo of\", \"photograph of\", \"illustration of\", \"painting of\", \"sketch of\", \"3D render of\"), honor it. Do not pivot to a different medium to avoid difficulty — match the user's stated intent.\n\nUser's Input:\n\n"
@@ -1167,9 +1167,9 @@
             ],
             "title": "Text String (User Prompt)",
             "properties": {
-              "Node name for S&R": "PrimitiveStringMultiline",
               "cnr_id": "comfy-core",
-              "ver": "0.25.0"
+              "ver": "0.25.0",
+              "Node name for S&R": "PrimitiveStringMultiline"
             },
             "widgets_values": [
               "Darunfax, foxbaey, nayaceta. Long, light wavy red hair, hazel eyes, natural freckles across her nose and cheeks, full, naturally pink lips, pale, smooth, almost translucent skin showing subtle veins, fine, natural body hairs on arms and shoulders, flat, toned stomach with a small innie belly button, deep hip dips accentuating the hourglass shape. Big, large breasts with pink nipples, very small pale areolas, tiny waist, big butt and thick thighs, slightly puffy mons pubis, coloration transitioning from pale pink outer labia to deeper rose tones, shaved, puffy pink innie vagina with hidden pink inner lips, small, soft pink perineum area.\n\nA 19-year-old woman standing in front of a full-length mirror in a warmly lit bedroom, taking a mirror selfie with her phone held at chest height. She is completely nude except for white thigh-high socks, her weight shifted onto one hip in a relaxed, confident stance. One hand holds the phone while the other rests casually on her hip dip, drawing attention to the dramatic curve of her waist. Her breasts are fully visible in the reflection, and the angle of her stance leaves her shaved vulva clearly exposed. Her hazel eyes look at the phone screen with a soft, teasing half-smile, hair falling loosely over one shoulder. Behind her, the reflection shows rumpled bedsheets and clothes draped over a chair. The mood is playful, intimate, and self-assured — a private photo taken on impulse, radiating casual sensuality.\n\nShot on base iPhone 15, 13mm wide angle lens, small sensor look, f/8 fixed aperture, 1/250s, authentic deep depth of field, sharp focus across the entire room, natural proportions, crisp fine detail, no bokeh, no background blur, natural skin with visible pores, freckles, pimples, minor blemishes and peach fuzz, sharp eyes, no skin smoothing, no beauty filter, no filters, uneven lighting on face, wide-angle lens distortion, natural color grading, white balance subtle warm, correctly exposed shadows, slightly flat dynamic range, HDR processing, unedited phone photo, digital noise, chroma noise, straight from camera roll, no mismatched shadows, no AI artifacts, no halos, no blending artifacts."
@@ -1213,11 +1213,15 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "PreviewAny",
               "cnr_id": "comfy-core",
-              "ver": "0.25.0"
+              "ver": "0.25.0",
+              "Node name for S&R": "PreviewAny"
             },
-            "widgets_values": []
+            "widgets_values": [
+              null,
+              null,
+              false
+            ]
           },
           {
             "id": 21,
@@ -1267,9 +1271,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "ComfySwitchNode",
               "cnr_id": "comfy-core",
-              "ver": "0.25.0"
+              "ver": "0.25.0",
+              "Node name for S&R": "ComfySwitchNode"
             },
             "widgets_values": [
               false
@@ -1324,9 +1328,9 @@
             ],
             "title": "Switch (Model)",
             "properties": {
-              "Node name for S&R": "ComfySwitchNode",
               "cnr_id": "comfy-core",
-              "ver": "0.25.0"
+              "ver": "0.25.0",
+              "Node name for S&R": "ComfySwitchNode"
             },
             "widgets_values": [
               false
@@ -1370,9 +1374,9 @@
             ],
             "title": "Boolean (Enable LoRA?)",
             "properties": {
-              "Node name for S&R": "PrimitiveBoolean",
               "cnr_id": "comfy-core",
-              "ver": "0.25.0"
+              "ver": "0.25.0",
+              "Node name for S&R": "PrimitiveBoolean"
             },
             "widgets_values": [
               true
@@ -1415,9 +1419,9 @@
             ],
             "title": "Boolean (Refine Prompt?)",
             "properties": {
-              "Node name for S&R": "PrimitiveBoolean",
               "cnr_id": "comfy-core",
-              "ver": "0.25.0"
+              "ver": "0.25.0",
+              "Node name for S&R": "PrimitiveBoolean"
             },
             "widgets_values": [
               false
@@ -1471,9 +1475,9 @@
             ],
             "title": "Concatenate Text (LoRA Trigger Word)",
             "properties": {
-              "Node name for S&R": "StringConcatenate",
               "cnr_id": "comfy-core",
-              "ver": "0.25.0"
+              "ver": "0.25.0",
+              "Node name for S&R": "StringConcatenate"
             },
             "widgets_values": [
               "",
@@ -1529,9 +1533,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "ComfySwitchNode",
               "cnr_id": "comfy-core",
-              "ver": "0.25.0"
+              "ver": "0.25.0",
+              "Node name for S&R": "ComfySwitchNode"
             },
             "widgets_values": [
               false
@@ -1584,10 +1588,10 @@
               }
             ],
             "properties": {
-              "Show Strengths": "Single Strength",
-              "Match": "",
               "cnr_id": "rgthree-comfy",
-              "ver": "1.0.2606200020"
+              "ver": "1.0.2606200020",
+              "Show Strengths": "Single Strength",
+              "Match": ""
             },
             "widgets_values": [
               {},
@@ -2013,16 +2017,16 @@
   },
   "config": {},
   "extra": {
-    "frontendVersion": "1.45.21",
+    "frontendVersion": "1.45.20",
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.6141203564832843,
+      "scale": 0.4194524666916774,
       "offset": [
-        1406.088947703605,
-        397.91268012064006
+        690.2169409950121,
+        778.3574531546861
       ]
     }
   },
