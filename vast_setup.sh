@@ -35,15 +35,8 @@ dl -d "$LORA_DIR" -o "LoRa_Krea2_NSFW+.safetensors" "$LORA_URL/LoRa_Krea2_NSFW+.
 dl -d "$LORA_DIR" -o "LoRa_Nayaceta.safetensors" "$LORA_URL/LoRa_Nayaceta.safetensors"
 dl -d "$LORA_DIR" -o "LoRa_Rosto_Darunfax.safetensors" "$LORA_URL/LoRa_Rosto_Darunfax.safetensors"
 
-# 6. Download and auto-load Workflow
-WORKFLOW_DIR="/workspace/ComfyUI/user/default/workflows"
-mkdir -p "$WORKFLOW_DIR"
-
-# Saved as default.json so ComfyUI automatically displays it on startup
-dl -d "$WORKFLOW_DIR" -o "default.json" \
-  "https://raw.githubusercontent.com/Nani-Ga-Suki/vast/refs/heads/main/krea2.json"
-
-# Keep a named copy in the Workflows menu for convenience
-cp "$WORKFLOW_DIR/default.json" "$WORKFLOW_DIR/krea2.json"
+# 6. Save Workflow to Workflows Tab
+curl -fsSL "https://raw.githubusercontent.com/Nani-Ga-Suki/vast/refs/heads/main/krea2.json" \
+  -o "/workspace/ComfyUI/user/default/workflows/krea2.json"
 
 echo "All models, custom nodes, and workflow downloaded successfully!"
